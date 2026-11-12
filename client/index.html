@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="The ITÜK Beer Pong Championship live tournament bracket." />
+    <title>The bracket · ITÜK Beer Pong</title>
+    <link rel="icon" href="/default-team.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="ITÜK Beer Pong home"><img src="/ituk-logo-white.svg" alt="ITÜK" /><span>Beer Pong</span></a>
+      <nav aria-label="Main navigation">
+        <a href="/" aria-current="page">Bracket</a>
+        <a href="/register.html">Register</a>
+        <a href="/rules.html">Rules</a>
+      </nav>
+    </header>
+
+    <main class="bracket-page">
+      <div class="page-heading">
+        <h1>Tournament bracket</h1>
+        <button id="results-button" class="button secondary" type="button" hidden>Results</button>
+        <button id="fullscreen-button" class="button secondary" type="button" aria-label="Enter fullscreen" title="Enter fullscreen">⛶</button>
+      </div>
+
+      <div class="board-toolbar"><span id="team-count" class="badge">Loading teams…</span></div>
+      <p id="error-message" class="message error" role="alert" hidden></p>
+
+      <div class="bracket-scroll" tabindex="0" aria-label="Tournament bracket. Scroll horizontally on a small screen.">
+        <div id="bracket" class="bracket">
+          <svg id="connections" class="connections" aria-hidden="true"></svg>
+        </div>
+      </div>
+
+      <div class="below-bracket">
+        <section class="champion panel"><h2>Champion</h2><p id="champion-name">Not decided</p></section>
+        <section class="bronze"><h2>Third place</h2><div id="third-place"></div></section>
+      </div>
+
+</main>
+    <script type="module" src="/src/bracket.js"></script>
+  </body>
+</html>
