@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register your team · ITÜK Beer Pong</title>
+    <link rel="icon" href="/default-team.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="ITÜK Beer Pong home"><img src="/ituk-logo-white.svg" alt="ITÜK" /><span>Beer Pong</span></a>
+      <nav aria-label="Main navigation"><a href="/">Bracket</a><a href="/register.html" aria-current="page">Register</a><a href="/rules.html">Rules</a></nav>
+    </header>
+    <main class="narrow-page">
+      <h1>Register a team</h1>
+      <p id="registration-count" class="badge">Checking available places…</p>
+
+      <form id="registration-form" class="panel registration-form">
+        <div class="avatar-picker">
+          <img id="image-preview" src="/default-team.svg" alt="Team picture preview" width="96" height="96" />
+          <div><label for="team-image">Team picture <span class="small">(optional)</span></label><input id="team-image" name="image" type="file" accept="image/png,image/jpeg,image/webp" aria-describedby="image-help" /><p id="image-help" class="small"><span id="upload-limit">Default picture if omitted.</span></p></div>
+        </div>
+        <label for="team-name">Team name</label>
+        <input id="team-name" name="team_name" maxlength="60" required />
+        <label for="players">First player</label>
+        <input id="players" name="players" maxlength="200" autocomplete="name" required />
+        <label for="second-player">Second player <span class="small">(optional)</span></label>
+        <input id="second-player" name="second_player" maxlength="200" />
+        <label class="checkbox-label"><input id="rules-agreement" type="checkbox" required /> I've read the <a href="/rules.html" target="_blank" rel="noopener">rules</a>.</label>
+        <button id="register-button" class="button" type="submit" disabled>Register team</button>
+        <p id="registration-message" class="message" role="status" hidden></p>
+      </form>
+      <section id="registration-success" class="panel success-panel" hidden><h2>Team registered</h2><p id="success-text"></p><a class="button" href="/">View bracket</a></section>
+    </main>
+    <script type="module" src="/src/register.js"></script>
+  </body>
+</html>

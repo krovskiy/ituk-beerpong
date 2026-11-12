@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Admin · ITÜK Beer Pong</title>
+    <link rel="icon" href="/default-team.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header class="site-header"><a class="brand" href="/"><img src="/ituk-logo-white.svg" alt="ITÜK" /><span>Beer Pong</span></a><a href="/">View bracket</a></header>
+    <main class="narrow-page admin-page">
+      <div class="page-heading"><h1>Organizer controls</h1><button id="admin-lock" class="button secondary" type="button" hidden>Lock</button></div>
+      <form id="admin-login" class="panel"><label for="admin-key">Organizer key</label><input id="admin-key" type="password" autocomplete="current-password" required /><button class="button" type="submit">Unlock</button></form>
+      <p id="admin-message" class="message" role="status" hidden></p>
+      <section id="admin-controls" class="panel" hidden>
+        <p id="tournament-status"></p>
+        <div class="admin-actions">
+          <a class="button secondary" href="/register.html" target="_blank" rel="noopener">Register team</a>
+          <button id="start-tournament" class="button" type="button">Enable games</button>
+          <button id="close-registration" class="button" type="button" hidden>Close registration</button>
+          <button id="undo-action" class="button secondary" type="button" disabled>Undo last action</button>
+          <button id="reopen-registration" class="button secondary" type="button" hidden>Reopen registration</button>
+          <button id="refresh-admin" class="button secondary" type="button">Refresh</button>
+        </div>
+      </section>
+      <div id="admin-matches" hidden></div>
+      <section id="admin-waitlist" class="panel" hidden><h2>Waiting list</h2><div id="waiting-teams"></div></section>
+    </main>
+    <script type="module" src="/src/admin.js"></script>
+  </body>
+</html>
